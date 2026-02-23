@@ -41,9 +41,43 @@ const player2 = {
 2. Each attacker has 1 attack opportunities
 */
 function Attack(attacker, target) {
-    const life = 100;
-    const hasattacked = ;
+    if (attacker.hasattacked) {
+        alert(`${attacker.name1} has already attacked`);
+        return;
+    }
+    const damage = 20;
+    target.health -= damage;
+    attacker.hasattacked = true;
+
+    alert(`${attacker.name1} attacks ${target.name1}`);
+    alert(`${target.name1} health: ${target.health}%`);
 }
+// This function is to reset the chances for each round
+function ResetTurn(player) {
+    player.hasattacked = false;
+}
+/*
+This function is so that when one of the players reaches 0 health, 
+one loses and the other obviously wins.
+ */
+function Startbatte(p1, p2) {
+    while (p1.health > 0 && p2.health > 0) {
+        //player1 turn
+        ResetTurn(p1);
+        Attack(p1, p2);
+        if (p2.health <= 0) break;
+
+        //player2 turn
+        ResetTurn(p2);
+        Attack(p2, p1);
+    }
+    if (p1.health <= 0) {
+        alert(`${p1.name1} has died. ${p2.name1} wins!`)
+    } else {
+        alert(`${p2.name1} has died. ${p1.name1} wins!`)
+    }
+}
+Startbatte(player1, player2);
 /*Arrow type function
 1. 
 */
