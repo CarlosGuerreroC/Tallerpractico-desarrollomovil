@@ -25,20 +25,33 @@ if (!validPlayer1 || !validPlayer2) {
     alert("Excellet");
     alert(`Welcome  ${save.player1} and ${save.player2}`);
 }
+const player1 = {
+    name1: save.player1,
+    health: 100,
+    hasattacked: false
+};
 
+const player2 = {
+    name1: save.player2,
+    health: 100,
+    hasattacked: false
+};
 /*Simple Function 
 1. This attack function
 2. Each attacker has 1 attack opportunities
-*/ 
-function Attack(){}
+*/
+function Attack(attacker, target) {
+    const life = 100;
+    const hasattacked = ;
+}
 /*Arrow type function
 1. 
 */
-const Cure = () =>{
+const Cure = () => {
     return
 }
 /*
 1. Defend function
 */
-const Defend = () =>{}
+const Defend = () => { }
 
